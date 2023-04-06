@@ -30,6 +30,21 @@ v5 版本的選項改為 `verbatimModuleSyntax`，因為先不升版，所以加
 
 [Announcing TypeScript 5.0](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/) @official
 
+## env.d.ts
+
+新增環境變數的智能提示配置`import.meta.env.[VITE...]`
+
+```typescript
+interface ImportMetaEnv {
+  readonly VITE_APP_TITLE: string
+  // else environment variable...
+}
+```
+
+### REF
+
+[环境变量和模式](https://cn.vitejs.dev/guide/env-and-mode.html#env-variables-and-modes) @vite official
+
 ## Project Setup
 
 ```sh
