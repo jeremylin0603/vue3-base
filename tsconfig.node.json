@@ -3,6 +3,9 @@
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
   "compilerOptions": {
     "composite": true,
-    "types": ["node"]
+    "types": ["node"],
+    // 原 "importsNotUsedAsValues" 將要被棄用, 詳見 README.md(#tsconfig.json)
+    "ignoreDeprecations": "5.0"
+    // "verbatimModuleSyntax": true
   }
 }

@@ -1,25 +1,34 @@
-# lctech-task
+# vue3-base-project
 
-This template should help get you started developing with Vue 3 in Vite.
+## tsconfig.json
 
-## Recommended IDE Setup
+TS 目前最新版本為 `v5.x`, 在研究新版前為求穩定先使用 `v4.x`.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+其中 `importsNotUsedAsValues` 選項被棄用，其目的是規範引入 type 時強制使用 `import type` 語法，以避免 JS parser 解析了預期外的參數，增加錯誤的風險。
 
-## Type Support for `.vue` Imports in TS
+v5 版本的選項改為 `verbatimModuleSyntax`，因為先不升版，所以加入`ignoreDeprecations` 選項避免 Editor 報錯，若未來決定升版，再將`verbatimModuleSyntax`選項補上即可。
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+```typescript
+{
+  ...
+  "compilerOptions": {
+    "ignoreDeprecations": "5.0",
+    // 升版後補上選項即可
+    // "verbatimModuleSyntax": true
+  },
+  ...
+}
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+也可以參考[issues#8650](https://github.com/sveltejs/kit/issues/8650#issuecomment-1402987777)的做法調整個人的 VSCode 版本
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### REF
 
-## Customize configuration
+[verbatimModuleSyntax](https://www.typescriptlang.org/tsconfig#verbatimModuleSyntax) @official
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+[importsNotUsedAsValues](https://www.typescriptlang.org/tsconfig#importsNotUsedAsValues) @official
+
+[Announcing TypeScript 5.0](https://devblogs.microsoft.com/typescript/announcing-typescript-5-0/) @official
 
 ## Project Setup
 
