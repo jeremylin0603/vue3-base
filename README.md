@@ -53,6 +53,12 @@ interface ImportMetaEnv {
 - `.env.development`: 新增環境變數 `VITE_APP_BASE_API` 並在 `env.d.ts` 宣告新增相應 TS 智能提示
 - `@/api/demo`: 新增請求和型別宣告示例，未來應按主要功能分類資料夾如 `auth` & `user`，其中包含各自的 types
 
+## SCSS
+
+- 新增管理全域 class 資料夾 `@/styles`
+- 新增 reset.scss
+- 配置全域變數 `@/styles/variables.scss` 和相應導入設定至 `vite.config.ts`
+
 ## Project Setup
 
 ```sh

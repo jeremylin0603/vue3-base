@@ -1,0 +1,7 @@
+// global scss variable
+
+:root {
+  --mainColor: #333;
+}
+
+$mainColor: var(--mainColor);
