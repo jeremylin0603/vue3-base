@@ -45,6 +45,14 @@ interface ImportMetaEnv {
 
 [环境变量和模式](https://cn.vitejs.dev/guide/env-and-mode.html#env-variables-and-modes) @vite official
 
+## axios
+
+希望不要過度封裝，盡量保有 axios 具備的功能同時又能方便未來擴充需求
+
+- `@/utils/request.ts`: axios literal. 先做簡單封裝，未來再按需擴展 auth、error/status handle 等功能。
+- `.env.development`: 新增環境變數 `VITE_APP_BASE_API` 並在 `env.d.ts` 宣告新增相應 TS 智能提示
+- `@/api/demo`: 新增請求和型別宣告示例，未來應按主要功能分類資料夾如 `auth` & `user`，其中包含各自的 types
+
 ## Project Setup
 
 ```sh
